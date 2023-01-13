@@ -21,10 +21,10 @@ class Adapter(): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
     inner class AdapterViewHolder(private val binding: ItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(list: Detail) {
-            binding.textView.text = "날짜:${list.stdDate}"
-            binding.textView2.text = "스피드:${list.stdHour}"
-            binding.textView3.text = "스피드:${list.conzoneName}"
-            binding.textView4.text = "스피드:${list.speed}"
+            binding.textView.text = "${list.stdDate.slice(0..3)}.${list.stdDate.slice(4..5)}.${list.stdDate.slice(6..7)}"
+            binding.textView2.text = "${list.stdHour.slice(0..1)}:${list.stdHour.slice(2..3)}"
+            binding.textView3.text = "${list.conzoneName}"
+            binding.textView4.text = "${list.speed}"
         }
     }
 
